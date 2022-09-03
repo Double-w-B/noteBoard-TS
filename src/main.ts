@@ -27,7 +27,8 @@ class App {
     const textNode = document.createTextNode("Add note");
     button.appendChild(textNode);
     this.appContainer.appendChild(button);
-    this.notes.length < 1 && button.classList.add("animation");
+    (this.notes === null || this.notes?.length < 1) &&
+      button.classList.add("animation");
     button.addEventListener("click", () => {
       button.classList.remove("animation");
       this.appContainer.appendChild(this.addNewNote());

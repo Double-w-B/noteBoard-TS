@@ -12,6 +12,7 @@ class App {
         }
     }
     createAddButton() {
+        var _a;
         const button = document.createElement("button");
         button.className = "add";
         button.id = "add";
@@ -21,7 +22,8 @@ class App {
         const textNode = document.createTextNode("Add note");
         button.appendChild(textNode);
         this.appContainer.appendChild(button);
-        this.notes.length < 1 && button.classList.add("animation");
+        (this.notes === null || ((_a = this.notes) === null || _a === void 0 ? void 0 : _a.length) < 1) &&
+            button.classList.add("animation");
         button.addEventListener("click", () => {
             button.classList.remove("animation");
             this.appContainer.appendChild(this.addNewNote());
